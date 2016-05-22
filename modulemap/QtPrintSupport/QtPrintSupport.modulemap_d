@@ -1,0 +1,12 @@
+module QtPrintSupport {
+    header "./qabstractprintdialog.h"
+    header "./qpagesetupdialog.h"
+    header "./qprintdialog.h"
+    header "./qprintengine.h"
+    header "./qprinter.h"
+    header "./qprinterinfo.h"
+    header "./qprintpreviewdialog.h"
+    header "./qprintpreviewwidget.h"
+    header "./qtprintsupportglobal.h"
+    header "./qtprintsupportversion.h"
+}

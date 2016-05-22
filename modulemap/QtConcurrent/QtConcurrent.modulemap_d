@@ -1,0 +1,18 @@
+module QtConcurrent {
+    header "./qtconcurrentcompilertest.h"
+    header "./qtconcurrentexception.h"
+    header "./qtconcurrentfilter.h"
+    header "./qtconcurrentfilterkernel.h"
+    header "./qtconcurrentfunctionwrappers.h"
+    header "./qtconcurrent_global.h"
+    header "./qtconcurrentiteratekernel.h"
+    header "./qtconcurrentmap.h"
+    header "./qtconcurrentmapkernel.h"
+    header "./qtconcurrentmedian.h"
+    header "./qtconcurrentreducekernel.h"
+    header "./qtconcurrentrunbase.h"
+    header "./qtconcurrentrun.h"
+    header "./qtconcurrentstoredfunctioncall.h"
+    header "./qtconcurrentthreadengine.h"
+    header "./qtconcurrentversion.h"
+}

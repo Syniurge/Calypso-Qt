@@ -1,0 +1,17 @@
+module QtSql {
+    header "./qsqldatabase.h"
+    header "./qsqldriver.h"
+    header "./qsqldriverplugin.h"
+    header "./qsqlerror.h"
+    header "./qsqlfield.h"
+    header "./qsql.h"
+    header "./qsqlindex.h"
+    header "./qsqlquery.h"
+    header "./qsqlquerymodel.h"
+    header "./qsqlrecord.h"
+    header "./qsqlrelationaldelegate.h"
+    header "./qsqlrelationaltablemodel.h"
+    header "./qsqlresult.h"
+    header "./qsqltablemodel.h"
+    header "./qtsqlversion.h"
+}

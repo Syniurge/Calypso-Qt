@@ -1,0 +1,6 @@
+module QtXml {
+    header "./qdom.h"
+    header "./qtxmlglobal.h"
+    header "./qtxmlversion.h"
+    header "./qxml.h"
+}

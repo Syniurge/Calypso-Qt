@@ -1,0 +1,9 @@
+module QtWebSockets {
+    header "./qmaskgenerator.h"
+    header "./qtwebsocketsversion.h"
+    header "./qwebsocketcorsauthenticator.h"
+    header "./qwebsocket.h"
+    header "./qwebsocketprotocol.h"
+    header "./qwebsocketserver.h"
+    header "./qwebsockets_global.h"
+}

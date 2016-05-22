@@ -1,0 +1,3 @@
+module QtPlatformSupport {
+    header "./qtplatformsupportversion.h"
+}

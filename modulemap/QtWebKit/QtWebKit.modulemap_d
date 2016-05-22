@@ -1,0 +1,12 @@
+module QtWebKit {
+    header "./qtwebkitversion.h"
+    header "./qwebdatabase.h"
+    header "./qwebelement.h"
+    header "./qwebhistory.h"
+    header "./qwebhistoryinterface.h"
+    header "./qwebkitglobal.h"
+    header "./qwebkitplatformplugin.h"
+    header "./qwebpluginfactory.h"
+    header "./qwebsecurityorigin.h"
+    header "./qwebsettings.h"
+}

@@ -1,0 +1,3 @@
+module QtDesignerComponents {
+    header "./qtdesignercomponentsversion.h"
+}

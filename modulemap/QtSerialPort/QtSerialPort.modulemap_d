@@ -1,0 +1,6 @@
+module QtSerialPort {
+    header "./qserialportglobal.h"
+    header "./qserialport.h"
+    header "./qserialportinfo.h"
+    header "./qtserialportversion.h"
+}

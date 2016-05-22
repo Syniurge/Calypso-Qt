@@ -1,0 +1,18 @@
+module QtXmlPatterns {
+    header "./qabstractmessagehandler.h"
+    header "./qabstracturiresolver.h"
+    header "./qabstractxmlnodemodel.h"
+    header "./qabstractxmlreceiver.h"
+    header "./qsimplexmlnodemodel.h"
+    header "./qsourcelocation.h"
+    header "./qtxmlpatternsglobal.h"
+    header "./qtxmlpatternsversion.h"
+    header "./qxmlformatter.h"
+    header "./qxmlname.h"
+    header "./qxmlnamepool.h"
+    header "./qxmlquery.h"
+    header "./qxmlresultitems.h"
+    header "./qxmlschema.h"
+    header "./qxmlschemavalidator.h"
+    header "./qxmlserializer.h"
+}

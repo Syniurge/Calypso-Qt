@@ -1,0 +1,13 @@
+module Enginio {
+    header "./enginiobasemodel.h"
+    header "./enginioclientconnection.h"
+    header "./enginioclient_global.h"
+    header "./enginioclient.h"
+    header "./enginio.h"
+    header "./enginioidentity.h"
+    header "./enginiomodel.h"
+    header "./enginiooauth2authentication.h"
+    header "./enginioreply.h"
+    header "./enginioreplystate.h"
+    header "./enginioversion.h"
+}

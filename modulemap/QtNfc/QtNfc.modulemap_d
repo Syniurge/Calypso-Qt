@@ -1,0 +1,15 @@
+module QtNfc {
+    header "./qndeffilter.h"
+    header "./qndefmessage.h"
+    header "./qndefnfcsmartposterrecord.h"
+    header "./qndefnfctextrecord.h"
+    header "./qndefnfcurirecord.h"
+    header "./qndefrecord.h"
+    header "./qnearfieldmanager.h"
+    header "./qnearfieldsharemanager.h"
+    header "./qnearfieldsharetarget.h"
+    header "./qnearfieldtarget.h"
+    header "./qnfcglobal.h"
+    header "./qqmlndefrecord.h"
+    header "./qtnfcversion.h"
+}

@@ -1,0 +1,13 @@
+module QtWebEngineWidgets {
+    header "./qtwebenginewidgetsglobal.h"
+    header "./qtwebenginewidgetsversion.h"
+    header "./qwebenginecertificateerror.h"
+    header "./qwebenginedownloaditem.h"
+    header "./qwebenginehistory.h"
+    header "./qwebenginepage.h"
+    header "./qwebengineprofile.h"
+    header "./qwebenginescriptcollection.h"
+    header "./qwebenginescript.h"
+    header "./qwebenginesettings.h"
+    header "./qwebengineview.h"
+}

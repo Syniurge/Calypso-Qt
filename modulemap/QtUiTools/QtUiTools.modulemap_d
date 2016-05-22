@@ -1,0 +1,4 @@
+module QtUiTools {
+    header "./qtuitoolsversion.h"
+    header "./quiloader.h"
+}

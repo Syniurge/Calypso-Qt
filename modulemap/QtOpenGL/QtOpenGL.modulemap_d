@@ -1,0 +1,11 @@
+module QtOpenGL {
+    header "./qglbuffer.h"
+    header "./qglcolormap.h"
+    header "./qglframebufferobject.h"
+    header "./qglfunctions.h"
+    header "./qgl.h"
+    header "./qglpixelbuffer.h"
+    header "./qglshaderprogram.h"
+    header "./qtopenglglobal.h"
+    header "./qtopenglversion.h"
+}

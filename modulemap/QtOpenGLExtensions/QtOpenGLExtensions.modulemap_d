@@ -1,0 +1,4 @@
+module QtOpenGLExtensions {
+    header "./qopenglextensions.h"
+    header "./qtopenglextensionsversion.h"
+}

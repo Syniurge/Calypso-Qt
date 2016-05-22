@@ -1,0 +1,3 @@
+module QtCLucene {
+    header "./qtcluceneversion.h"
+}

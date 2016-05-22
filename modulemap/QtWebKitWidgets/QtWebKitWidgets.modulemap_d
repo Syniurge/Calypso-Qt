@@ -1,0 +1,8 @@
+module QtWebKitWidgets {
+    header "./qgraphicswebview.h"
+    header "./qtwebkitwidgetsversion.h"
+    header "./qwebframe.h"
+    header "./qwebinspector.h"
+    header "./qwebpage.h"
+    header "./qwebview.h"
+}

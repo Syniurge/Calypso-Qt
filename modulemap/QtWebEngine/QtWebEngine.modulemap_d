@@ -1,0 +1,4 @@
+module QtWebEngine {
+    header "./qtwebengineglobal.h"
+    header "./qtwebengineversion.h"
+}

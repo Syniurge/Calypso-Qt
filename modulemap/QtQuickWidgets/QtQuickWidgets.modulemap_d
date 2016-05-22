@@ -1,0 +1,5 @@
+module QtQuickWidgets {
+    header "./qquickwidget.h"
+    header "./qtquickwidgetsglobal.h"
+    header "./qtquickwidgetsversion.h"
+}

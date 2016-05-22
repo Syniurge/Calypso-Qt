@@ -1,0 +1,4 @@
+module QtZlib {
+    header "./zconf.h"
+    header "./zlib.h"
+}

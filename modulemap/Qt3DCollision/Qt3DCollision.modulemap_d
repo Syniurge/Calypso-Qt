@@ -1,0 +1,10 @@
+module Qt3DCollision {
+    header "./qabstractcollider.h"
+    header "./qboxcollider.h"
+    header "./qcapsulecollider.h"
+    header "./qcollisionaspect.h"
+    header "./qgeometrycollider.h"
+    header "./qspherecollider.h"
+    header "./qt3dcollision_global.h"
+    header "./qt3dcollisionversion.h"
+}

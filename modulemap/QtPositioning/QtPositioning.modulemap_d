@@ -1,0 +1,17 @@
+module QtPositioning {
+    header "./qgeoaddress.h"
+    header "./qgeoareamonitorinfo.h"
+    header "./qgeoareamonitorsource.h"
+    header "./qgeocircle.h"
+    header "./qgeocoordinate.h"
+    header "./qgeopositioninfo.h"
+    header "./qgeopositioninfosourcefactory.h"
+    header "./qgeopositioninfosource.h"
+    header "./qgeorectangle.h"
+    header "./qgeosatelliteinfo.h"
+    header "./qgeosatelliteinfosource.h"
+    header "./qgeoshape.h"
+    header "./qnmeapositioninfosource.h"
+    header "./qpositioningglobal.h"
+    header "./qtpositioningversion.h"
+}

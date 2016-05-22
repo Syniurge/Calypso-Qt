@@ -1,0 +1,5 @@
+module QtQuickTest {
+    header "./qtquicktestversion.h"
+    header "./quicktestglobal.h"
+    header "./quicktest.h"
+}

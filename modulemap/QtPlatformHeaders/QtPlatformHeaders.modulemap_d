@@ -1,0 +1,10 @@
+module QtPlatformHeaders {
+    header "./qcocoanativecontext.h"
+    header "./qeglfsfunctions.h"
+    header "./qeglnativecontext.h"
+    header "./qglxnativecontext.h"
+    header "./qtplatformheadersversion.h"
+    header "./qwglnativecontext.h"
+    header "./qwindowswindowfunctions.h"
+    header "./qxcbwindowfunctions.h"
+}

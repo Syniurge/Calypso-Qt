@@ -1,0 +1,8 @@
+module QtSvg {
+    header "./qgraphicssvgitem.h"
+    header "./qsvggenerator.h"
+    header "./qsvgrenderer.h"
+    header "./qsvgwidget.h"
+    header "./qtsvgglobal.h"
+    header "./qtsvgversion.h"
+}

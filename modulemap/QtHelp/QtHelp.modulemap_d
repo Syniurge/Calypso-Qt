@@ -1,0 +1,11 @@
+module QtHelp {
+    header "./qhelpcontentwidget.h"
+    header "./qhelpenginecore.h"
+    header "./qhelpengine.h"
+    header "./qhelp_global.h"
+    header "./qhelpindexwidget.h"
+    header "./qhelpsearchengine.h"
+    header "./qhelpsearchquerywidget.h"
+    header "./qhelpsearchresultwidget.h"
+    header "./qthelpversion.h"
+}

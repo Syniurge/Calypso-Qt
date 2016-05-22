@@ -1,0 +1,6 @@
+module QtWebView {
+    header "./qquickwebview.h"
+    header "./qquickwebviewloadrequest.h"
+    header "./qtwebviewversion.h"
+    header "./qwebview_global.h"
+}

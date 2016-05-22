@@ -1,0 +1,10 @@
+module Qt3DQuick {
+    header "./qqmlaspectengine.h"
+    header "./qt3dquick_global.h"
+    header "./qt3dquickversion.h"
+    header "./quick3dconfiguration.h"
+    header "./quick3dentity.h"
+    header "./quick3dentityloader.h"
+    header "./quick3dnode.h"
+    header "./quick3dtransform.h"
+}

@@ -1,0 +1,6 @@
+module QtMultimediaQuick_p {
+    header "./qsgvideonode_rgb.h"
+    header "./qsgvideonode_texture.h"
+    header "./qsgvideonode_yuv.h"
+    header "./qtmultimediaquick_pversion.h"
+}

@@ -1,0 +1,4 @@
+module QtScriptTools {
+    header "./qscriptenginedebugger.h"
+    header "./qtscripttoolsversion.h"
+}

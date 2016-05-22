@@ -1,0 +1,5 @@
+module QtX11Extras {
+    header "./qtx11extrasglobal.h"
+    header "./qtx11extrasversion.h"
+    header "./qx11info_x11.h"
+}

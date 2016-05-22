@@ -1,0 +1,6 @@
+module Qt3DLogic {
+    header "./qlogicaspect.h"
+    header "./qlogiccomponent.h"
+    header "./qt3dlogic_global.h"
+    header "./qt3dlogicversion.h"
+}

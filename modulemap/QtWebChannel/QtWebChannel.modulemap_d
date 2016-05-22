@@ -1,0 +1,7 @@
+module QtWebChannel {
+    header "./qqmlwebchannel.h"
+    header "./qtwebchannelversion.h"
+    header "./qwebchannelabstracttransport.h"
+    header "./qwebchannelglobal.h"
+    header "./qwebchannel.h"
+}

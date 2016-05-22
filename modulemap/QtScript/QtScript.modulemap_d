@@ -1,0 +1,17 @@
+module QtScript {
+    header "./qscriptable.h"
+    header "./qscriptclass.h"
+    header "./qscriptclasspropertyiterator.h"
+    header "./qscriptcontext.h"
+    header "./qscriptcontextinfo.h"
+    header "./qscriptengineagent.h"
+    header "./qscriptengine.h"
+    header "./qscriptextensioninterface.h"
+    header "./qscriptextensionplugin.h"
+    header "./qscriptprogram.h"
+    header "./qscriptstring.h"
+    header "./qscriptvalue.h"
+    header "./qscriptvalueiterator.h"
+    header "./qtscriptglobal.h"
+    header "./qtscriptversion.h"
+}

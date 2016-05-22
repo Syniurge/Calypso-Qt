@@ -1,0 +1,8 @@
+module QtMultimediaWidgets {
+    header "./qcameraviewfinder.h"
+    header "./qgraphicsvideoitem.h"
+    header "./qtmultimediawidgetdefs.h"
+    header "./qtmultimediawidgetsversion.h"
+    header "./qvideowidgetcontrol.h"
+    header "./qvideowidget.h"
+}

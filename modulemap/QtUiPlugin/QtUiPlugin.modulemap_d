@@ -1,0 +1,5 @@
+module QtUiPlugin {
+    header "./customwidget.h"
+    header "./qdesignerexportwidget.h"
+    header "./qtuipluginversion.h"
+}

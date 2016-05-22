@@ -1,0 +1,12 @@
+module Qt3DInput {
+    header "./mouseeventfilter.h"
+    header "./q3dkeyevent.h"
+    header "./q3dmouseevent.h"
+    header "./qinputaspect.h"
+    header "./qkeyboardcontroller.h"
+    header "./qkeyboardinput.h"
+    header "./qmousecontroller.h"
+    header "./qmouseinput.h"
+    header "./qt3dinput_global.h"
+    header "./qt3dinputversion.h"
+}
