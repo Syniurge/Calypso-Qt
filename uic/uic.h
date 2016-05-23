@@ -98,6 +98,10 @@ public:
     bool jwrite(DomUI *ui);
 #endif
 
+#ifdef QT_UIC_D_GENERATOR
+    bool dwrite(DomUI *ui);
+#endif
+
 #ifdef QT_UIC_CPP_GENERATOR
     bool write(DomUI *ui);
 #endif

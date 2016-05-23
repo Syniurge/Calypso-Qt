@@ -43,6 +43,11 @@
 #include "cppwritedeclaration.h"
 #endif
 
+#ifdef QT_UIC_D_GENERATOR
+#include "dwriteincludes.h"
+#include "dwritedeclaration.h"
+#endif
+
 #ifdef QT_UIC_JAVA_GENERATOR
 #include "javawriteincludes.h"
 #include "javawritedeclaration.h"
@@ -218,6 +223,18 @@ bool Uic::write(QIODevice *in)
 #else
         fprintf(stderr, "uic: option to generate java code not compiled in\n");
 #endif
+    } else if (option().generator == Option::DGenerator) {
+#ifdef QT_UIC_D_GENERATOR
+        if (!language.isEmpty() && language.toLower() != QLatin1String("c++")) {
+            fprintf(stderr, "uic: File is not a 'c++' ui file, language=%s\n", qPrintable(language));
+            delete ui;
+            return false;
+        }
+
+        rtn = dwrite (ui);
+#else
+        fprintf(stderr, "uic: option to generate d code not compiled in\n");
+#endif
     } else {
 #ifdef QT_UIC_CPP_GENERATOR
         if (!language.isEmpty() && language.toLower() != QLatin1String("c++")) {
@@ -269,6 +286,35 @@ bool Uic::write(DomUI *ui)
 
     if (opt.headerProtection)
         writeHeaderProtectionEnd();
+
+    return true;
+}
+#endif
+
+#ifdef QT_UIC_D_GENERATOR
+bool Uic::dwrite(DomUI *ui)
+{
+    using namespace D;
+
+    if (!ui || !ui->elementWidget())
+        return false;
+
+    if (opt.copyrightHeader)
+        writeCopyrightHeader(ui);
+
+    pixFunction = ui->elementPixmapFunction();
+    if (pixFunction == QLatin1String("QPixmap::fromMimeSource"))
+        pixFunction = QLatin1String("qPixmapFromMimeSource");
+
+    externalPix = ui->elementImages() == 0;
+
+    info.acceptUI(ui);
+    cWidgetsInfo.acceptUI(ui);
+    WriteIncludes writeIncludes(this);
+    writeIncludes.acceptUI(ui);
+
+    Validator(this).acceptUI(ui);
+    WriteDeclaration(this, writeIncludes.scriptsActivated()).acceptUI(ui);
 
     return true;
 }

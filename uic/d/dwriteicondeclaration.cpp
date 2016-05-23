@@ -31,69 +31,42 @@
 **
 ****************************************************************************/
 
-#ifndef OPTION_H
-#define OPTION_H
+#include "dwriteicondeclaration.h"
+#include "driver.h"
+#include "ui4.h"
+#include "uic.h"
 
-#include <qstring.h>
-#include <qdir.h>
+#include <qtextstream.h>
 
 QT_BEGIN_NAMESPACE
 
-struct Option
+namespace D {
+
+WriteIconDeclaration::WriteIconDeclaration(Uic *uic)
+    : driver(uic->driver()), output(uic->output()), option(uic->option())
 {
-    enum Generator
-    {
-        CppGenerator,
-        DGenerator,
-        JavaGenerator
-    };
+}
 
-    unsigned int headerProtection : 1;
-    unsigned int copyrightHeader : 1;
-    unsigned int generateImplemetation : 1;
-    unsigned int generateNamespace : 1;
-    unsigned int autoConnection : 1;
-    unsigned int dependencies : 1;
-    unsigned int extractImages : 1;
-    unsigned int limitXPM_LineLength : 1;
-    unsigned int implicitIncludes: 1;
-    Generator generator;
+void WriteIconDeclaration::acceptUI(DomUI *node)
+{
+    TreeWalker::acceptUI(node);
+}
 
-    QString inputFile;
-    QString outputFile;
-    QString qrcOutputFile;
-    QString indent;
-    QString prefix;
-    QString postfix;
-    QString translateFunction;
-    QString includeFile;
-#ifdef QT_UIC_JAVA_GENERATOR
-    QString javaPackage;
-    QString javaOutputDirectory;
-#endif
+void WriteIconDeclaration::acceptImages(DomImages *images)
+{
+    TreeWalker::acceptImages(images);
+}
 
-    Option()
-        : headerProtection(1),
-          copyrightHeader(1),
-          generateImplemetation(0),
-          generateNamespace(1),
-          autoConnection(1),
-          dependencies(0),
-          extractImages(0),
-          limitXPM_LineLength(0),
-          implicitIncludes(1),
-          generator(CppGenerator),
-          prefix(QLatin1String("Ui_"))
-    { indent.fill(QLatin1Char(' '), 4); }
+void WriteIconDeclaration::acceptImage(DomImage *image)
+{
+    QString name = image->attributeName();
+    if (name.isEmpty())
+        return;
 
-    QString messagePrefix() const
-    {
-        return inputFile.isEmpty() ?
-               QString(QLatin1String("stdin")) :
-               QDir::toNativeSeparators(inputFile);
-    }
-};
+    driver->insertPixmap(name);
+    output << option.indent << option.indent << name << "_ID,\n";
+}
+
+} // namespace D
 
 QT_END_NAMESPACE
-
-#endif // OPTION_H
