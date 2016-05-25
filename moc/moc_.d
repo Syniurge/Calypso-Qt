@@ -1293,10 +1293,11 @@ public:
             qt_meta_data.ptr,  &qt_static_metacall, null, null);
     }
 
-//     extern(C++) override const const(QMetaObject)* metaObject()
-//     {
-//         return QObject.d_ptr.metaObject ? QObject.d_ptr.dynamicMetaObject() : &staticMetaObject;
-//     }
+    extern(C++) override const const(QMetaObject)* metaObject()
+    {
+        auto d_ptr = QObject.d_ptr.data;
+        return d_ptr.metaObject ? d_ptr.dynamicMetaObject() : &staticMetaObject;
+    }
 
     extern(C++) override void *qt_metacast(const(char) *_clname)
     {
