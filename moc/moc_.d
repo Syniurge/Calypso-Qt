@@ -40,15 +40,16 @@ enum slots;
 
 enum isSignal(alias F) = is(typeof(F) == function) && hasUDA!(F, signals);
 enum isSlot(alias F) = is(typeof(F) == function) && hasUDA!(F, slots);
+enum isConstructor(alias F) = is(typeof(F) == function) && __traits(identifier, F) == "__ctor";
 template isMethod(alias F)
 {
     private enum ident = __traits(identifier, F);
-    static if (ident == "qt_metacast" || ident == "qt_metacall")
+    static if (ident == "qt_metacast" || ident == "qt_metacall" || ident == "metaObject"
+                    || ident == "__ctor" || ident == "__dtor")
         enum isMethod = false;
     else
         enum isMethod = is(typeof(F) == function) && !__traits(isStaticFunction, F) && !isSignal!F && !isSlot!F;
 }
-enum isConstructor(alias F) = is(typeof(F) == function) && __traits(identifier, F) == "this";
 
 public alias symalias(alias S) = S;
 
@@ -251,7 +252,9 @@ public:
                     strreg(s);
                     foreach (f; __traits(getOverloads, C, s)) {
                         alias RetType = ReturnType!(typeof(f));
-                        static if (!isQBuiltinType!RetType)
+                        static if (isConstructor!f)
+                            strreg("");
+                        else static if (!isQBuiltinType!RetType)
                             strreg(DtoCXXType!RetType);
 //                          strreg(f.tag);
 
@@ -268,7 +271,7 @@ public:
             registerFunctionStrings!signalList();
             registerFunctionStrings!slotList();
             registerFunctionStrings!methodList();
-//             registerFunctionStrings!constructorList();
+            registerFunctionStrings!constructorList();
 //             registerPropertyStrings();
 //             registerEnumStrings();
 
@@ -564,12 +567,15 @@ public:
                         result ~= "    ";
 
                         // Types
-                        genTypeInfo!(ReturnType!f)(/*allowEmptyName=*/isConstructor!f);
+                        static if (isConstructor!f)
+                            genTypeInfoByName("");
+                        else
+                            genTypeInfo!(ReturnType!f)();
                         result ~= ",";
                         foreach (ArgType; ParameterTypeTuple!(typeof(f)))
                         {
                             result ~= " ";
-                            genTypeInfo!ArgType(/*allowEmptyName=*/isConstructor!f);
+                            genTypeInfo!ArgType();
                             result ~= ",";
                         }
 
@@ -582,7 +588,7 @@ public:
                 }
             }
 
-            void genTypeInfo(T)(bool allowEmptyName)
+            void genTypeInfo(T)()
             {
                 static if (isQBuiltinType!T) {
                     static if (is(T == qreal)) {
@@ -599,9 +605,13 @@ public:
                         result ~= format("%4d", type);
                     }
                 } else {
-//                     assert(!typeName.empty() || allowEmptyName);
                     result ~= format("0x%.8x | %d", MetaDataFlags.IsUnresolvedType, stridx(T.stringof));
                 }
+            }
+
+            void genTypeInfoByName()(string typeName)
+            {
+                result ~= format("0x%.8x | %d", MetaDataFlags.IsUnresolvedType, stridx(typeName));
             }
 
             genFunctionParameters!signalList("signal");
@@ -623,8 +633,8 @@ public:
         //
         // Build constructors array
         //
-//             if (isConstructible)
-//                 genFunctions(constructorList, "constructor", MethodConstructor, paramsIndex);
+            if (isConstructible)
+                genFunctions!constructorList("constructor", MethodFlags.MethodConstructor, paramsIndex);
 
         //
         // Terminate data array
