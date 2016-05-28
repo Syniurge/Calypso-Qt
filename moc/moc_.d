@@ -695,7 +695,7 @@ public:
                 result ~= "if (_c == QMetaObject.Call.InvokeMetaMethod) {\n";
                 static if (hasQObject && !QT_NO_DEBUG)
                     result ~= "        assert(staticMetaObject.cast(_o));\n"; // FIXME identifier taken
-                result ~= format("        auto _t = cast(%s *)(_o);\n", __traits(identifier, C));
+                result ~= format("        auto _t = cast(%s)(_o);\n", __traits(identifier, C));
                 result ~= "        final switch (_id) {\n";
 
                 int methodindex = 0;
