@@ -127,7 +127,7 @@ void WriteIncludes::acceptUI(DomUI *node)
     m_output << "import (C++) QPoint, QPointF, QRect, QRectF, QSize, QSizeF;" << QLatin1Char('\n');
     m_output << "import (C++) QLocale, QChar, QDate, QTime, QDateTime, QUrl;" << QLatin1Char('\n');
     m_output << "import (C++) QVariant, QAction, QFrame, QPalette, QCursor, QKeySequence;" << QLatin1Char('\n');
-    m_output << "import (C++) QMetaObject, QString, QByteArray, QIcon, QSizePolicy;" << QLatin1Char('\n');
+    m_output << "import (C++) QMetaObject, QString, QByteArray, QIcon, QSizePolicy, QFont;" << QLatin1Char('\n');
     // Qt:: enums
     m_output << "import (C++) Qt.Orientation, Qt.CursorShape, Qt.ToolBarArea;" << QLatin1Char('\n');
     m_output << QLatin1Char('\n');
