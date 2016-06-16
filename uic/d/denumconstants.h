@@ -15,6 +15,7 @@ struct EnumConstants
 };
 
 extern EnumConstants enumConstants;
+QString enumCpptoD(QString enumVal);
 
 }
 

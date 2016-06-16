@@ -25,6 +25,15 @@ EnumConstants::EnumConstants()
     }
 }
 
+QString enumCpptoD(QString enumVal)
+{
+    if (enumVal.startsWith(QLatin1Literal("Qt::")))
+        enumVal.remove(0, 4);
+    if (enumConstants.m_enumCppToD.contains(enumVal))
+        return enumConstants.m_enumCppToD[enumVal];
+    return enumVal;
+}
+
 EnumConstants enumConstants;
 
 }

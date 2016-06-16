@@ -1309,14 +1309,21 @@ void WriteInitialization::writeProperties(const QString &varName,
 //                 scope += QLatin1String(".");
 //                 propertyValue.prepend(scope);
 //             }
-            if (propertyValue.startsWith(QLatin1Literal("Qt::")))
-                propertyValue.remove(0, 4);
-            if (enumConstants.m_enumCppToD.contains(propertyValue))
-                propertyValue = enumConstants.m_enumCppToD[propertyValue];
+            propertyValue = enumCpptoD(propertyValue);
             break;
-        case DomProperty::Set:
-            propertyValue = p->elementSet();
+        case DomProperty::Set: {
+            QString cppSet = p->elementSet();
+            propertyValue = QLatin1String("");
+            bool isFirst = true;
+            for (auto enumVal: cppSet.split(QLatin1String("|"))) {
+                if (!isFirst)
+                    propertyValue += QLatin1String("|");
+                else
+                    isFirst = false;
+                propertyValue += enumCpptoD(enumVal);
+            }
             break;
+        }
         case DomProperty::Font:
             propertyValue = writeFontProperties(p->elementFont());
             break;

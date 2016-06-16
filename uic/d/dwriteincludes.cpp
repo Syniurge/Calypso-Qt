@@ -176,12 +176,11 @@ void WriteIncludes::acceptProperty(DomProperty *node)
         add(QLatin1String("QDate"));
     if (node->kind() == DomProperty::Locale)
         add(QLatin1String("QLocale"));
-    if (node->kind() == DomProperty::Enum) {
-        QString propertyValue = node->elementEnum();
-        if (propertyValue.startsWith(QLatin1Literal("Qt::")))
-            propertyValue.remove(0, 4);
-        if (enumConstants.m_enumCppToD.contains(propertyValue))
-            propertyValue = enumConstants.m_enumCppToD[propertyValue];
+    if (node->kind() == DomProperty::Enum || node->kind() == DomProperty::Set) {
+        QString propertyValue = (node->kind() == DomProperty::Enum) ?
+                            node->elementEnum() : node->elementSet();
+        propertyValue = propertyValue.split(QLatin1Char('|'))[0];
+        propertyValue = enumCpptoD(propertyValue);
 
         QChar dotChar = QChar::fromLatin1('.');
         if (propertyValue.count(dotChar)) {
