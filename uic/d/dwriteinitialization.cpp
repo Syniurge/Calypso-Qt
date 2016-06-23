@@ -989,8 +989,8 @@ void WriteInitialization::acceptSpacer(DomSpacer *node)
 static inline QString formLayoutRole(int column, int colspan)
 {
     if (colspan > 1)
-        return QLatin1String("QFormLayout::SpanningRole");
-    return column == 0 ? QLatin1String("QFormLayout::LabelRole") : QLatin1String("QFormLayout::FieldRole");
+        return QLatin1String("QFormLayout.ItemRole.SpanningRole");
+    return column == 0 ? QLatin1String("QFormLayout.ItemRole.LabelRole") : QLatin1String("QFormLayout.ItemRole.FieldRole");
 }
 
 void WriteInitialization::acceptLayoutItem(DomLayoutItem *node)
